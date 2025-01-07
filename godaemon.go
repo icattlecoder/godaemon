@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"strings"
 )
 
 var godaemon = flag.Bool("d", false, "run app as a daemon with -d=true")
@@ -18,7 +17,7 @@ func init() {
 		args := os.Args[1:]
 		i := 0
 		for ; i < len(args); i++ {
-			if strings.HasPrefix(args[i], "-d") {
+			if args[i] == "-d" || args[i] == "-d=true" {
 				args[i] = "-d=false"
 				break
 			}
