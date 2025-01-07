@@ -17,7 +17,7 @@ func init() {
 		args := os.Args[1:]
 		i := 0
 		for ; i < len(args); i++ {
-			if args[i] == "-d=true" {
+			if args[i] == "-d" || args[i] == "-d=true" {
 				args[i] = "-d=false"
 				break
 			}
